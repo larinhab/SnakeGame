@@ -168,7 +168,7 @@ const gameLoop = () => {
     
     loopId = setTimeout(() => {
      gameLoop()   
-    }, 100)
+    }, 200)
 }
 
 gameLoop()
@@ -184,7 +184,7 @@ const difficultyUp = () => {
 }
 
 document.addEventListener("keydown", ({key}) => {
-    if(key == "ArrowRight" && direction != "left"){
+    if(key == "ArrowRight"  && direction != "left"){
         direction = "right"
     }
 
@@ -197,6 +197,24 @@ document.addEventListener("keydown", ({key}) => {
     }
 
     if(key == "ArrowUp" && direction != "down"){
+        direction = "up"
+    }
+})
+
+document.addEventListener("keypress", ({key}) => {
+    if(key == "d"  && direction != "left"){
+        direction = "right"
+    }
+
+    if(key == "a" && direction != "right"){
+        direction = "left"
+    }
+
+    if(key == "s" && direction != "up"){
+        direction = "down"
+    }
+
+    if(key == "w" && direction != "down"){
         direction = "up"
     }
 })
