@@ -17,6 +17,7 @@ const incrementScore = () => {
     score.innerText = +score.innerText + 10
 }
 
+
 const randomNumber = (min, max) => {
     return Math.round(Math.random () * (max - min) + min)
 }
@@ -40,7 +41,7 @@ const food = {
     color: randomColor(),
 }
 
-let direction, loopId 
+let direction, loopId, loopUp
 
 
 const drawFood = () => {
@@ -153,11 +154,16 @@ const gameOver = () => {
     finalScore.innerText = score.innerText
     canvas.style.filter = "blur(4px)"
 }
+const increaseDifficulty = () => {
+    if( +score.innerText >= 200) {
+        clearInterval(loopUp)
 
-
+        loopUp = setTimeout(() => {
+            gameLoop()   
+           }, 175)
+    }
+}
 const gameLoop = () => {
-    clearInterval(loopId)
-
     ctx.clearRect(0,0,600,600)
     // drawGrid()
     drawFood()
@@ -165,23 +171,16 @@ const gameLoop = () => {
     drawSnake()
     checkEat()
     checkColision()
-    
+    increaseDifficulty()
+
     loopId = setTimeout(() => {
      gameLoop()   
     }, 200)
 }
 
+// gameLoop()
 gameLoop()
-
-const difficultyUp = () => {
-    if(incrementScore > 100 ) {
-        clearInterval(loopUp)
-
-        loopUp = setTimeout(() => {
-            gameLoop()   
-           }, 75)
-    }
-}
+increaseDifficulty()
 
 document.addEventListener("keydown", ({key}) => {
     if(key == "ArrowRight"  && direction != "left"){

@@ -12,20 +12,17 @@
 
 
 <p align="center">
-  <img alt="finished project" src="./src/assets" width="100%">
+  <img alt="dashboard" src="./src/assets/readme1.png" width="100%">
 </p>
 
 <p align="center">
-  <img alt="division" src="./src/assets/" width="100%">
+  <img alt="" src="./src/assets/readme2.png" width="100%">
 </p>
 
 <p align="center">
-  <img alt="plus" src="./src/assets/" width="100%">
+  <img alt="" src="./src/assets/readme3.png" width="100%">
 </p>
 
-<p align="center">
-  <img alt="number" src="./src/assets/" width="100%">
-</p>
 
 
 ## 🚀 Techs / Tecnologias
